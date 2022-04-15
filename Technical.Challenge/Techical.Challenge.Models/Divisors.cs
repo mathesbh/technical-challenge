@@ -18,19 +18,5 @@ namespace Technical.Challenge.Techical.Challenge.Models
 
             return divisors;
         }
-
-        public bool CheckPrimes(int number)
-        {
-            int divisors = 0;
-
-            if (number == 1) return true;
-
-            for (int i = 1; i <= number; i++)
-            {
-                if (number % i == 0) divisors++;
-            }
-
-            return divisors == 2 ? true : false;
-        }
     }
 }
