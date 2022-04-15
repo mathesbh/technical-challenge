@@ -11,7 +11,7 @@ namespace Technical.Challenge.Techical.Challenge.Models
         public List<int> NumberDivisors(int number)
         {
             List<int> divisors = new List<int>();
-            for (int i = 1; i < number; i++)
+            for (int i = 1; i <= number; i++)
             {
                 if (number % i == 0) divisors.Add(i);
             }
