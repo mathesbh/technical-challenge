@@ -22,5 +22,20 @@ namespace Technical.Challenge.Testes
             Assert.Equal(list, returnList);
 
         }
+
+        [Fact]
+        public void CheckPrimes()
+        {
+            //Arrange
+            var list = new List<int> { 1, 3, 5, 9, 15, 45 };
+            var divisors = new Divisors();
+            List<int> returnList = new List<int>();
+
+            //Act
+            list.ForEach(x => { if (divisors.CheckPrimes(x)) returnList.Add(x); });
+
+            //Assert
+            Assert.Equal(new List<int>{ 1, 3, 5 }, returnList);
+        }
     }
 }
