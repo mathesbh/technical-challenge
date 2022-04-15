@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Technical.Challenge.Helpers\Technical.Challenge.Helpers.csproj" />
     <ProjectReference Include="..\Technical.Challenge\Technical.Challenge.csproj" />
   </ItemGroup>
 

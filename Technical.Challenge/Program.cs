@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Technical.Challenge.Techical.Challenge.Models;
+using Technical.Challenge.Helpers;
 
 namespace Technical.Challenge
 {
@@ -10,15 +10,13 @@ namespace Technical.Challenge
         {
             Console.WriteLine("Digite um número: ");
 
-            var divisors = new Divisors();
-
             var number = Convert.ToInt32(Console.ReadLine());
 
-            var numbers = divisors.NumberDivisors(number);
+            var numbers = Divisors.NumberDivisors(number);
 
             List<int> returnList = new List<int>();
 
-            numbers.ForEach(x => { if (divisors.CheckPrimes(x)) returnList.Add(x); });
+            numbers.ForEach(x => { if (Divisors.CheckPrimes(x)) returnList.Add(x); });
 
             Console.WriteLine("Número digitado: {0}", number);
 

@@ -1,6 +1,5 @@
-using System;
 using System.Collections.Generic;
-using Technical.Challenge.Techical.Challenge.Models;
+using Technical.Challenge.Helpers;
 using Xunit;
 
 namespace Technical.Challenge.Testes
@@ -12,11 +11,10 @@ namespace Technical.Challenge.Testes
         {
             //Arrange
             var list = new List<int> { 1, 3, 5, 9, 15, 45 };
-            var divisors = new Divisors();
             List<int> returnList;
 
             //Act
-            returnList = divisors.NumberDivisors(45);
+            returnList = Divisors.NumberDivisors(45);
 
             //Assert
             Assert.Equal(list, returnList);
@@ -28,11 +26,10 @@ namespace Technical.Challenge.Testes
         {
             //Arrange
             var list = new List<int> { 1, 3, 5, 9, 15, 45 };
-            var divisors = new Divisors();
             List<int> returnList = new List<int>();
 
             //Act
-            list.ForEach(x => { if (divisors.CheckPrimes(x)) returnList.Add(x); });
+            list.ForEach(x => { if (Divisors.CheckPrimes(x)) returnList.Add(x); });
 
             //Assert
             Assert.Equal(new List<int>{ 1, 3, 5 }, returnList);
