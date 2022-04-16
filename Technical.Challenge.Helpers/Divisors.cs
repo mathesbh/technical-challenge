@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Technical.Challenge.Helpers
 {
@@ -30,6 +31,8 @@ namespace Technical.Challenge.Helpers
             int divisors = 0;
 
             if (number == 1) return true;
+
+            if (number == 2) return false;
 
             for (int i = 1; i <= number; i++)
                 if (number % i == 0) divisors++;
