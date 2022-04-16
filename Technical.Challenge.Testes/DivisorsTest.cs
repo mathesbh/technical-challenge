@@ -22,7 +22,7 @@ namespace Technical.Challenge.Testes
         }
 
         [Fact]
-        public void CheckPrimes()
+        public void CheckDivisorsPrimesTest()
         {
             //Arrange
             var list = new List<int> { 1, 3, 5, 9, 15, 45 };
