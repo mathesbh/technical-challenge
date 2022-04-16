@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31229.75
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Technical.Challenge", "Technical.Challenge\Technical.Challenge.csproj", "{F346F419-3138-4A84-BC3F-6698E29DDD87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Technical.Challenge", "Technical.Challenge\Technical.Challenge.csproj", "{F346F419-3138-4A84-BC3F-6698E29DDD87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Technical.Challenge.Testes", "Technical.Challenge.Testes\Technical.Challenge.Testes.csproj", "{F2E82E18-1D11-4423-AC4D-54F1BD898618}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Technical.Challenge.Testes", "Technical.Challenge.Testes\Technical.Challenge.Testes.csproj", "{F2E82E18-1D11-4423-AC4D-54F1BD898618}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Technical.Challenge.Helpers", "Technical.Challenge.Helpers\Technical.Challenge.Helpers.csproj", "{CAA55E0B-D836-4310-B07D-5DA5A84F1E6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Technical.Challenge.Helpers", "Technical.Challenge.Helpers\Technical.Challenge.Helpers.csproj", "{CAA55E0B-D836-4310-B07D-5DA5A84F1E6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Technical.Challenge.Domain", "Technical.Challenge.Domain\Technical.Challenge.Domain.csproj", "{111D072F-8187-490D-81A8-95334F626DAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Technical.Challenge.Domain", "Technical.Challenge.Domain\Technical.Challenge.Domain.csproj", "{111D072F-8187-490D-81A8-95334F626DAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Technical.Challenge.Services", "Technical.Challenge.Services\Technical.Challenge.Services.csproj", "{BD28E147-BD50-4DFC-8379-DF613EC3BB05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Technical.Challenge.Services", "Technical.Challenge.Services\Technical.Challenge.Services.csproj", "{BD28E147-BD50-4DFC-8379-DF613EC3BB05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Technical.Challenge.Api", "Technical.Challenge.Api\Technical.Challenge.Api.csproj", "{180EC5D9-E1A0-43E6-90B2-AAF38C95FD05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{BD28E147-BD50-4DFC-8379-DF613EC3BB05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD28E147-BD50-4DFC-8379-DF613EC3BB05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD28E147-BD50-4DFC-8379-DF613EC3BB05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{180EC5D9-E1A0-43E6-90B2-AAF38C95FD05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{180EC5D9-E1A0-43E6-90B2-AAF38C95FD05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{180EC5D9-E1A0-43E6-90B2-AAF38C95FD05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{180EC5D9-E1A0-43E6-90B2-AAF38C95FD05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
