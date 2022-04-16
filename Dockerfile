@@ -18,5 +18,5 @@ RUN dotnet publish -c Release -o publish
 FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
 WORKDIR /app
 COPY --from=publish /Technical.Challenge.Api/publish ./
-ENTRYPOINT ["dotnet", "Brunsker.Bsnotas.WebApi.dll"]
+ENTRYPOINT ["dotnet", "Technical.Challenge.Api.dll"]
 
