@@ -1,31 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using Technical.Challenge.Helpers;
+﻿using Microsoft.Extensions.DependencyInjection;
+using System;
+using Technical.Challenge.Domain.Interfaces;
+using Technical.Challenge.Services;
 
 namespace Technical.Challenge
 {
     class Program
     {
+        private static IDivisorsServices _divisorsServices;
         static void Main(string[] args)
         {
-            Console.WriteLine("Digite um número: ");
+            var serviceCollection = new ServiceCollection();
+            var serviceProvider = AddApplicationServicesExtensions.AddApplicatonServices(serviceCollection).BuildServiceProvider();
 
-            var number = Convert.ToInt32(Console.ReadLine());
+            _divisorsServices = serviceProvider.GetService<IDivisorsServices>();
 
-            var numbers = Divisors.NumberDivisors(number);
+            while (true)
+            {
+                Console.WriteLine("Digite um número: ");
 
-            List<int> returnList = new List<int>();
+                int number;
 
-            numbers.ForEach(x => { if (Divisors.CheckPrimes(x)) returnList.Add(x); });
+                bool success = int.TryParse(Console.ReadLine(), out number);
 
-            Console.WriteLine("Número digitado: {0}", number);
+                if(success)
+                {
+                    var divisors = _divisorsServices.DivisorNumberPrimes(number);
 
-            Console.WriteLine("Números divisores: {0}", string.Join(", ", numbers));
+                    if(divisors.Error == null)
+                    {
+                        Console.WriteLine("Número digitado: {0}", divisors.Number);
 
-            Console.WriteLine("Divisores Primo: {0}", string.Join(", ", returnList));
+                        Console.WriteLine("Números divisores: {0}", string.Join(", ", divisors.DivisorsNumbers));
 
-            Console.ReadKey();
+                        Console.WriteLine("Divisores Primo: {0}", string.Join(", ", divisors.PrimeDivisors));
 
+                        Console.ReadKey();   
+                    }
+                    else
+                    {
+                        Console.WriteLine(divisors.Error);
+                    }                             
+                }
+                else
+                {
+                    Console.WriteLine("Valor digitado inválido");
+
+                    Console.ReadKey();
+                }
+                
+            }
         }
     }
 }
