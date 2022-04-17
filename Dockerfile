@@ -1,6 +1,6 @@
-FROM mcr.microsoft.com/dotnet/aspnet:5.0-focal AS base
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build-env
 WORKDIR /app
-EXPOSE 80
+#EXPOSE 80
 
 COPY *.sln .
 COPY "/Technical.Challenge/Technical.Challenge.csproj" "/Technical.Challenge/"
@@ -12,11 +12,12 @@ COPY "/Technical.Challenge.Services/Technical.Challenge.Services.csproj" "/Techn
 RUN dotnet restore "/Technical.Challenge.Api/Technical.Challenge.Api.csproj"
 
 COPY . ./
-WORKDIR /Technical.Challenge.Api
+WORKDIR /app/Technical.Challenge.Api
 RUN dotnet publish -c Release -o publish 
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0-focal AS build
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
 WORKDIR /app
-COPY --from=publish /Technical.Challenge.Api/publish ./
-ENTRYPOINT ["dotnet", "Technical.Challenge.Api.dll"]
+COPY --from=build-env /app/Technical.Challenge.Api/publish ./
+#ENTRYPOINT ["dotnet", "Technical.Challenge.Api.dll"]
+CMD ASPNETCORE_URLS="http://*:$PORT" dotnet Technical.Challenge.Api.dll
 
